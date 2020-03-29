@@ -4,9 +4,8 @@
 #
 # $Log:$
 #
-#
-
 CC=gcc
+
 CFLAGS=-O -DNORMALUNIX -DLINUX -m32
 LDFLAGS=-m32
 LIBS=-lm
