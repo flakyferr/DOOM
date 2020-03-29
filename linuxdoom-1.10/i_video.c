@@ -46,7 +46,7 @@ int XShmGetEventBase( Display* dpy ); // problems with g++?
 #include <sys/socket.h>
 
 #include <netinet/in.h>
-#include <errnos.h>
+#include <errno.h>
 #include <signal.h>
 
 #include "doomstat.h"
@@ -473,12 +473,7 @@ void I_FinishUpdate (void)
 	}
 
     }
-    else if (multiply == 4)
-    {
-	// Broken. Gotta fix this some day.
-	void Expand4(unsigned *, double *);
-  	Expand4 ((unsigned *)(screens[0]), (double *) (image->data));
-    }
+
 
     if (doShm)
     {
@@ -563,11 +558,11 @@ void UploadNewPalette(Colormap cmap, byte *palette)
 	    for (i=0 ; i<256 ; i++)
 	    {
 		c = gammatable[usegamma][*palette++];
-		colors[i].red = (c<<8) + c;
+		colors[i].red = /*(c<<8) + */c;
 		c = gammatable[usegamma][*palette++];
-		colors[i].green = (c<<8) + c;
+		colors[i].green = /*(c<<8) +*/ c;
 		c = gammatable[usegamma][*palette++];
-		colors[i].blue = (c<<8) + c;
+		colors[i].blue = /*(c<<8) +*/ c;
 	    }
 
 	    // store the colors to the current colormap
@@ -666,7 +661,6 @@ void grabsharedmemory(int size)
       id = shmget((key_t)key, size, IPC_CREAT|0777);
       if (id==-1)
       {
-	extern int errno;
 	fprintf(stderr, "errno=%d\n", errno);
 	I_Error("Could not get any shared memory");
       }

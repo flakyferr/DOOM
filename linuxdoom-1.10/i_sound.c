@@ -57,6 +57,8 @@ rcsid[] = "$Id: i_unix.c,v 1.5 1997/02/03 22:45:10 b1 Exp $";
 #include "w_wad.h"
 
 #include "doomdef.h"
+#include <errno.h>
+
 
 // UNIX hack, to be removed.
 #ifdef SNDSERV
@@ -163,7 +165,6 @@ myioctl
   int*	arg )
 {   
     int		rc;
-    extern int	errno;
     
     rc = ioctl(fd, command, arg);  
     if (rc < 0)

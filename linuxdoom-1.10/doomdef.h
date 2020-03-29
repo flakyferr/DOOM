@@ -30,7 +30,7 @@
 // Global parameters/defines.
 //
 // DOOM version
-enum { VERSION =  110 };
+enum { VERSION =  109 };
 
 
 // Game mode handling - identify IWAD version
@@ -81,7 +81,7 @@ typedef enum
 //  and unfinished. Default is synchronous.
 // Experimental asynchronous timer based is
 //  handled by SNDINTR. 
-#define SNDSERV  1
+#define SNDSERV  0
 //#define SNDINTR  1
 
 
@@ -95,7 +95,7 @@ typedef enum
 // For resize of screen, at start of game.
 // It will not work dynamically, see visplanes.
 //
-#define	BASE_WIDTH		320
+#define	BASE_WIDTH      320
 
 // It is educational but futile to change this
 //  scaling e.g. to 2. Drawing of status bar,
