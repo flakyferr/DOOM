@@ -1,4 +1,4 @@
-This is a little project that lets you compile and run the original Doom source code with only minor cleanup for retrocompatibility.
+This is a little project that lets you compile and run the original Doom source code with only minor cleanup for retrocompatibility. (Only tested on Ubuntu 19)
 It is also my first project using GitHub so it might look a bit rough.
 
 The program DOES NOT CONTAIN ANY GAME FILES. You need to buy the .wad file from any platform like Steam or GOG etc.
