@@ -558,11 +558,11 @@ void UploadNewPalette(Colormap cmap, byte *palette)
 	    for (i=0 ; i<256 ; i++)
 	    {
 		c = gammatable[usegamma][*palette++];
-		colors[i].red = /*(c<<8) + */c;
+		colors[i].red = (c<<8) + c;
 		c = gammatable[usegamma][*palette++];
-		colors[i].green = /*(c<<8) +*/ c;
+		colors[i].green = (c<<8) + c;
 		c = gammatable[usegamma][*palette++];
-		colors[i].blue = /*(c<<8) +*/ c;
+		colors[i].blue = (c<<8) + c;
 	    }
 
 	    // store the colors to the current colormap
@@ -788,6 +788,7 @@ void I_InitGraphics(void)
     X_cmap = XCreateColormap(X_display, RootWindow(X_display,
 						   X_screen), X_visual, AllocAll);
 
+	XInstallColormap(X_display, X_cmap);
     // setup attributes for main window
     attribmask = CWEventMask | CWColormap | CWBorderPixel;
     attribs.event_mask =
