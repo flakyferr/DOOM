@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "time.h": "c",
+        "types.h": "c",
+        "unistd.h": "c",
+        "errno.h": "c",
+        "ioctl.h": "c",
+        "soundsrv.h": "c",
+        "filio.h":"c",
+        "soundcard.h": "c"
+    }
+}
