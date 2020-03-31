@@ -33,7 +33,7 @@ I'm still working on compatibility with the sound server.
 -> To enable it just run "export LD_PRELOAD=/usr/lib/i386-linux-gnu/pulseaudio/libpulsedsp.so" before starting the game. 
 -> Compile the soundserver: "cd sndserv; make"
 -> Put the compiled "sndserver" file in the same folder of the "linuxxdoom" executable.
--> Run the game and enjoy some low quality gunshots
+-> Run the game and enjoy some low quality gunshots.
 !! Background music doesn't work, as the original code for music playback is or seems to be incomplete. Maybe I'll try to work something out.
 
 
