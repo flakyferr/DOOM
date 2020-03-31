@@ -26,6 +26,15 @@ Run:
 DISPLAY=:3 ./linux/linuxxdoom
 to run the game inside the previously created display.
 
-I'm still working on compatibility with the sound server, so for now SOUND IS NOT WORKING and disabled inside "doomdef.h".
+I'm still working on compatibility with the sound server.
+-> The soundserver now works, but still uses /dev/dsp to output sounds, which hasn't supported in linux since 2011.
+-> To fix this you can use "padsp", a wrapper that redirects the program's access from /dev/dsp to a PulseAudio sound server.
+-> You need the 32 bit version of padsp: sudo apt install padsp:i386
+-> To enable it just run "export LD_PRELOAD=/usr/lib/i386-linux-gnu/pulseaudio/libpulsedsp.so" before starting the game. 
+-> Compile the soundserver: "cd sndserv; make"
+-> Put the compiled "sndserver" file in the same folder of the "linuxxdoom" executable.
+-> Run the game and enjoy some low quality gunshots
+!! Background music doesn't work, as the original code for music playback is or seems to be incomplete. Maybe I'll try to work something out.
+
 
 
